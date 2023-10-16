@@ -1,0 +1,152 @@
+@import url(./colors.css);
+/* reset */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Montserrat', sans-serif;
+	scroll-behavior: smooth;
+}
+a {
+	text-decoration: none;
+	color: var(--white);
+}
+/* general classes */
+.red-underline {
+	display: block;
+	background-color: var(--accent-color);
+	height: 6px;
+	width: 85%;
+	margin: 0 auto;
+	border-radius: 6px;
+}
+
+/* navigation */
+.nav .logo {
+	margin-left: 3.5rem;
+}
+.nav .logo img {
+	display: block;
+	height: 6rem;
+}
+.nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: fixed;
+	top: 0;
+	margin: 1.5rem auto;
+	width: 100%;
+	z-index: 100;
+	border-radius: 3rem;
+	backdrop-filter: blur(20px);
+	background-color: rgba(0, 0, 0, 0.6);
+}
+@supports not (backdrop-filter: blur()) {
+	.nav {
+		background-color: rgba(0, 0, 0, 0.8);
+	}
+}
+.nav .nav-items {
+	margin-right: 3rem;
+	display: flex;
+	justify-content: center;
+	list-style: none;
+}
+.nav .nav-item a {
+	margin: 1rem 1.5rem;
+	font-size: 1.8rem;
+
+	color: #fff;
+	transition: all ease 0.3s;
+}
+.nav .nav-item a:hover {
+	color: var(--accent-color);
+}
+/* main - hero img */
+.hero-bg {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 100vh;
+	background-image: url('/img/hero-bg-xl.jpg');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.hero-bg::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.65);
+}
+.hero-bg .hero-text h1 {
+	font-weight: 400;
+	font-size: 6rem;
+	color: var(--white);
+}
+.hero-bg .hero-text p {
+	font-size: 1.7rem;
+	margin: 1rem 0;
+	font-family: 'Anonymous Pro', monospace;
+	color: var(--white);
+}
+.hero-bg .hero-text {
+	text-align: center;
+	z-index: 10;
+}
+.menu-btn {
+	background: none;
+	border: none;
+	cursor: pointer;
+	margin-right: 4rem;
+	display: block;
+}
+.menu-btn .fa-bars:hover {
+	color: var(--accent-color);
+}
+.menu-btn .fa-bars {
+	font-size: 2rem;
+	color: var(--white);
+	transition: all ease 0.3s;
+}
+.chevron-down .fa-chevron-down {
+	display: block;
+	font-size: 4rem;
+	transition: all ease 0.3s;
+}
+.chevron-down .fa-chevron-down:hover {
+	color: var(--accent-color);
+}
+/* media queries */
+@media (max-width: 1200px) {
+	.hero-bg .hero-text h1 {
+		font-size: 4.5rem;
+	}
+	.hero-bg .hero-text p {
+		font-size: 1.3rem;
+	}
+	.nav .nav-item a {
+		font-size: 1.5rem;
+	}
+}
+@media (max-width: 768px) {
+	.hero-bg {
+		background-image: url('/img/hero-bg-sm.jpg');
+	}
+	.hero-bg .hero-text h1 {
+		font-size: 3.9rem;
+	}
+	.hero-bg .hero-text p {
+		font-size: 1.2rem;
+	}
+	.nav .nav-item a {
+		font-size: 1.4rem;
+	}
+}
